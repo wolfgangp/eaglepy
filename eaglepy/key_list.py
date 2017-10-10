@@ -86,7 +86,8 @@ class Key_List():
         
         :returns: An iterator for the list values.
         """
-        return self.list.itervalues()
+        #return self.list.itervalues()
+        return iter(self.list.values())
         
     def clear(self):
         """
@@ -127,7 +128,8 @@ class Key_List():
         :returns: An iterator for the object names.
         """
         
-        return self.list.iterkeys()
+        #return self.list.iterkeys()
+        return self.list.keys()
 
     def pop(self, name):
         """
@@ -165,7 +167,8 @@ class Key_List():
         :returns: Whether the list contains an object with the specified name. 
         """
         
-        return self.list.has_key(name)
+        #return self.list.has_key(name)
+        return name in self.list
     
     def item_at_index(self, index):
         """
@@ -173,4 +176,5 @@ class Key_List():
         
         :returns: The list item at the specified index. 
         """
-        return self.list[self.list.keys()[index]]
+        #return self.list[self.list.keys()[index]]
+        return self.list[list(self.list.keys())[index]]

@@ -30,8 +30,8 @@ populated dynamically (using reflection) when this module is imported.
 
 """
 
-import attributes
-import constants
+from eaglepy import attributes, constants
+#import constants
 import inspect
 import sys
 from xml.etree import ElementTree
@@ -932,7 +932,8 @@ def parse_item(n):
     
     """
     
-    if ITEM_MAP.has_key(n.tag) == False:
+    #if ITEM_MAP.has_key(n.tag) == False:
+    if n.tag not in ITEM_MAP:
         print("Warning--unsupported tag {0}.".format(n.tag))
         return None
 

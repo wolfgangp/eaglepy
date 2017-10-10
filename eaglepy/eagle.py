@@ -7,12 +7,13 @@ A Python package for creating, modifying, and writing Cadsoft EAGLE files
 
 """
 
-import attributes
-import constants
-import etree_utils
-import key_list
-import primitives
-import StringIO
+from eaglepy import attributes, constants, etree_utils, key_list, primitives
+#import constants
+#import etree_utils
+#import key_list
+#import primitives
+#import StringIO
+from io import StringIO
 
 # Attempt to use ``lxml``.
 # Otherwise, use ``xml``.
@@ -70,10 +71,12 @@ class Eagle:
             raise Exception('Invalid tag name for root node--expecting {0}; got {1}.'.format(constants.TAGS.EAGLE, n_eagle.tag))
         
         # Get the version of the Eagle node.
-        if n_eagle.attrib.has_key(constants.ATTRIBUTES.VERSION):
-            version = n_eagle.attrib[constants.ATTRIBUTES.VERSION]
-        else:
-            version = Eagle.DEFAULT_VERSION
+        #if n_eagle.attrib.has_key(constants.ATTRIBUTES.VERSION):
+        #    version = n_eagle.attrib[constants.ATTRIBUTES.VERSION]
+        #else:
+        #    version = Eagle.DEFAULT_VERSION
+        
+        version = n_eagle.attrib.get(constants.ATTRIBUTES.VERSION, Eagle.DEFAULT_VERSION)
         
         # Get the drawing element
         # There should only be one drawing per document.

@@ -33,7 +33,7 @@ on the parent object.
 
 """
 
-import constants
+from eaglepy import constants
 
 class Rotation:
     """
@@ -231,7 +231,8 @@ def parse(cls, n, attr):
     
     value = n.attrib[attr]
     
-    if cls.ATTR_MAP.has_key(attr):
+    #if cls.ATTR_MAP.has_key(attr):
+    if attr in cls.ATTR_MAP:
         f = cls.ATTR_MAP[attr]
         return f.parse(value)
     
