@@ -6,7 +6,7 @@ Provides a function which returns a list of the common layers found in an EAGLE 
 
 """
 
-from eaglepy.eagle import Layer
+from .eagle import Layer
 
 def get_layers():
     """

@@ -25,7 +25,7 @@ The following class would be valid:
 
 """
 
-from eaglepy import key_list
+from . import key_list
 
 try:
     from lxml import etree as ElementTree

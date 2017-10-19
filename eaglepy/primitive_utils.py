@@ -7,7 +7,7 @@ for example.
 
 """
 
-from eaglepy import primitives
+from . import primitives
 import math
 
 def _get_chamfer_points(p1, p2, chamfer):

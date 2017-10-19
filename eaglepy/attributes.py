@@ -33,7 +33,7 @@ on the parent object.
 
 """
 
-from eaglepy import constants
+from . import constants
 
 class Rotation:
     """

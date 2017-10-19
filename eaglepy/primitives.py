@@ -30,7 +30,7 @@ populated dynamically (using reflection) when this module is imported.
 
 """
 
-from eaglepy import attributes, constants
+from . import attributes, constants
 #import constants
 import inspect
 import sys
