@@ -7,12 +7,8 @@ A Python package for creating, modifying, and writing Cadsoft EAGLE files
 
 """
 
-from eaglepy import attributes, constants, etree_utils, key_list, primitives
-#import constants
-#import etree_utils
-#import key_list
-#import primitives
-#import StringIO
+#from eaglepy import attributes, constants, etree_utils, key_list, primitives
+import attributes, constants, etree_utils, key_list, primitives
 from io import StringIO
 
 # Attempt to use ``lxml``.
